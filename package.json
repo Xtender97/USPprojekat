@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Xtender97/USPprojekat/issues"
   },
-  "homepage": "https://github.com/Xtender97/USPprojekat#readme"
+  "homepage": "https://github.com/Xtender97/USPprojekat#readme",
+  "dependencies": {
+    "sequelize": "^5.21.13"
+  }
 }
