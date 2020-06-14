@@ -1,0 +1,20 @@
+{
+  "name": "usp_projekat",
+  "version": "1.0.0",
+  "description": "Usp projekat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xtender97/USPprojekat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xtender97/USPprojekat/issues"
+  },
+  "homepage": "https://github.com/Xtender97/USPprojekat#readme"
+}
