@@ -1,0 +1,19 @@
+korisnici
+
+id ime prezime email sifra idpreduzeca
+
+preduzece
+
+id ime
+
+kvarovi
+
+id opstina lokacija datumpocetka datumkraja
+
+pretplatnici
+
+id email opstina 
+
+
+
+
