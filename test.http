@@ -1,0 +1,16 @@
+# POST http://localhost:3000/api/auth/register
+POST http://localhost:3000/api/auth/login
+content-type: application/json
+
+# {
+#     "ime": "milan",
+#     "prezime": "boskovic",
+#     "email": "email@email.com",
+#     "sifra": "1"
+# }
+
+{
+    "email": "email@email.com",
+    "sifra": "1"
+}
+
