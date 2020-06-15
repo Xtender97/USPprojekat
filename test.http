@@ -1,11 +1,11 @@
-# POST http://localhost:3000/api/auth/register
-# POST http://localhost:3000/api/auth/login
 POST http://localhost:3000/api/kvar/add
+# POST http://localhost:3000/api/auth/login
+# POST http://localhost:3000/api/kvar/add
 Content-Type: application/json
 
 {
     "opstina": "cukarica",
     "datumpocetka": "2020-06-15T13:15:59.837Z",
     "datumkraja" :"2020-06-15T13:15:59.837Z",
-    "lokacija" : "na adresi toj i toj od tog borja do tog borja"
+    "lokacija" : "Djure 45 do 56"
 }

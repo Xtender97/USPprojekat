@@ -20,6 +20,10 @@ Kvar.init({
 
     datumkraja: {
         type: Sequelize.DATE
+    },
+    obradjen:{
+        type: Sequelize.BOOLEAN,
+        default: false
     }
 
 

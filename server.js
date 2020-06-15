@@ -62,16 +62,7 @@ app.use(cors());
 
 app.use('/api/auth', user);
 app.use('/api/pretplatnik', pretplatnik);
-app.use('/api/kvar', kvar)
-// app.use('/api/dispatcher', dispatcher);
-// app.use('/api/fetcher', fetcher);
-
-// app.use('/api/safety/trailer', trailer);
-// app.use('/api/safety/truck', truckR);
-// app.use('/api/safety/driver', driverR);
-// app.use('/api/safety/user', userR);
-// app.use('/api/safety/expiration', expR);
-
+app.use('/api/kvar', kvar);
 
 
 app.use("/", express.static(path.join(__dirname, "frontend")));
@@ -81,7 +72,7 @@ sequelize
     .authenticate()
     .then(() => {
         console.log('Connection has been established successfully.');
-        // sequelize.sync();
+        // sequelize.sync({force:true});
     })
     .catch(err => {
         console.error('Unable to connect to the database:', err);
