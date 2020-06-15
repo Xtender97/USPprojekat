@@ -1,0 +1,14 @@
+
+  <div class="containter">
+    <a routerLink="/">Pocetna</a>
+
+    <div class="navigation right">
+      <a *ngIf="!authenticated" (click)="login()">Sign In</a>
+      <a *ngIf="authenticated" (click)="logout()">Sign Out</a>
+    </div>
+
+  </div>
+
+
+
+
