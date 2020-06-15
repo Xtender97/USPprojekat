@@ -10,11 +10,14 @@ import { MessageModule } from 'primeng/message';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
+import { DropdownModule} from 'primeng/dropdown'
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations/animations'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { PretplataComponent } from './pretplata/pretplata.component';
 
 
 @NgModule({
@@ -24,7 +27,8 @@ import { InputTextModule } from 'primeng/inputtext';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    PretplataComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     FormsModule,
     HttpClientModule,
-    InputTextModule
+    InputTextModule,
+    DropdownModule,
+    BrowserAnimationsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
