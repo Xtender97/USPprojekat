@@ -1,5 +1,5 @@
 <div
-  class="p-grid p-justify-center p-align-center no-margine"
+  class="p-grid p-justify-center p-align-center no-margine spacer-in"
   style="width: 100%;"
 >
   <p-card header="Prijava na servis" class="p-col-8 p-lg-4">
@@ -8,7 +8,7 @@
       <input [(ngModel)]="this.email" name="email" class="p-col-8 spacer-out" id="email" type="text" size="30"
                   pInputText  [ngModelOptions]="{updateOn: 'blur'}">
       <label class="p-col-4">Opstina</label>
-      <p-dropdown class="p-col-8" [options]="opstine" [(ngModel)]="opstina" optionLabel="imeOpstine"></p-dropdown>
+      <p-dropdown class="p-col-8 no-margin" [options]="opstine" [(ngModel)]="opstina" optionLabel="imeOpstine"></p-dropdown>
       <p-button class="p-col-12" label="Pretplati se" (onClick)= "prijava()"></p-button>
 
     </div>
