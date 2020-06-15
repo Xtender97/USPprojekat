@@ -1,11 +1,13 @@
 const User = require("../models/User");
-const sequelize = require("../database/databaseConnection");
+const sequelize = require("../databaseConnection");
 const Sequelize = require("sequelize");
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 
 exports.login = function (req, res) {
     const errorHandler = (err) => {
+        console.log(err);
         return res.status(500).json({
             message: "Internal server error",
             error: err
