@@ -18,6 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PretplataComponent } from './pretplata/pretplata.component';
+import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
+import {CalendarModule} from 'primeng/calendar';
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { PretplataComponent } from './pretplata/pretplata.component';
     HttpClientModule,
     InputTextModule,
     DropdownModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule,
+    DialogModule,
+    CalendarModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
