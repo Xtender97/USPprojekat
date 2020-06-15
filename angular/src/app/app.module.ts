@@ -19,6 +19,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PretplataComponent } from './pretplata/pretplata.component';
 import {ToastModule } from 'primeng/toast'
+import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
+import {CalendarModule} from 'primeng/calendar';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import {ToastModule } from 'primeng/toast'
     InputTextModule,
     DropdownModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+    TableModule,
+    DialogModule,
+    CalendarModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
