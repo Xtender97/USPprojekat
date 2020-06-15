@@ -1,16 +1,11 @@
 # POST http://localhost:3000/api/auth/register
-POST http://localhost:3000/api/auth/login
-content-type: application/json
+# POST http://localhost:3000/api/auth/login
+GET http://localhost:3000/api/kvar/get
+Content-Type: application/json
 
 # {
-#     "ime": "milan",
-#     "prezime": "boskovic",
-#     "email": "email@email.com",
-#     "sifra": "1"
+#     "opstina": "cukarica",
+#     "datumpocetka": "2020-06-15T13:15:59.837Z",
+#     "datumkraja" :"2020-06-15T13:15:59.837Z",
+#     "lokacija" : "na adresi toj i toj od tog borja do tog borja"
 # }
-
-{
-    "email": "email@email.com",
-    "sifra": "1"
-}
-
