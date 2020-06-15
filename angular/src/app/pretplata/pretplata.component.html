@@ -9,7 +9,7 @@
                   pInputText  [ngModelOptions]="{updateOn: 'blur'}">
       <label class="p-col-4">Opstina</label>
       <p-dropdown class="p-col-8 no-margin" [options]="opstine" [(ngModel)]="opstina" optionLabel="imeOpstine"></p-dropdown>
-      <p-button class="p-col-12" label="Pretplati se" (onClick)= "prijava()"></p-button>
+      <p-button class="p-col-4 p-offset-8 no-right" [style]="{width:'100%'}" label="Pretplati se" (onClick)= "prijava()"></p-button>
 
     </div>
   </p-card>

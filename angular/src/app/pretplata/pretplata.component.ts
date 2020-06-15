@@ -14,8 +14,11 @@ export class PretplataComponent implements OnInit {
     imeOpstine: string,
     id: number
   }[] = [
-      { imeOpstine: 'Cukarica', id: 1 },
-      { imeOpstine: 'Rakovica', id: 2 }
+      { imeOpstine: 'Opstina1', id: 1 },
+      { imeOpstine: 'Opstina2', id: 2 },
+      { imeOpstine: 'Opstina3', id: 3 },
+
+      { imeOpstine: 'Opstina4', id: 4 }
     ];
 
   opstina: any;

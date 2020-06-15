@@ -22,6 +22,7 @@ import {ToastModule } from 'primeng/toast'
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
 import {CalendarModule} from 'primeng/calendar';
+import { KvarComponent } from './kvar/kvar.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {CalendarModule} from 'primeng/calendar';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    PretplataComponent
+    PretplataComponent,
+    KvarComponent
   ],
   imports: [
     BrowserModule,

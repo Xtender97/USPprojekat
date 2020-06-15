@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -6,39 +10,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  kvarovi: any[] = [
-    {
-      id: 1,
-      opstina: 'Cukarica',
-      lokacija: 'Kralja 2',
-      datumpocetka: '20-2-2020',
-      datumkraja: '2-3-2020',
-    },
-  ];
-  dijagol:boolean = false;
+  baseUrl = environment.apiUrl + '/kvar';
+
+  kvarovi: {
+    id: number,
+    opstina: string,
+    lokacija: string,
+    datumpocetka: Date,
+    datumkraja: Date,
+  }[];
 
   opstine: {
     imeOpstine: string,
     id: number
   }[] = [
-    {imeOpstine:'Cukarica',id:1},
-    {imeOpstine:'Rakovica',id:2}
-  ];
+      { imeOpstine: 'Cukarica', id: 1 },
+      { imeOpstine: 'Rakovica', id: 2 }
+    ];
 
   opstina: any;
   lokacija: string;
   datumpocetka: Date;
   datumkraja: Date;
 
-  constructor() {}
+  constructor(private router: Router, private http: HttpClient) { }
 
-  ngOnInit(): void {}
-
-  prikaziDijalog(){
-    this.dijagol = true;
+  ngOnInit(): void {
+    this.http.get(this.baseUrl + "/get").subscribe((data: { data: any[] }) => {
+      this.kvarovi = data.data;
+    })
   }
 
-  sakrijDijalog(){
-    this.dijagol = false;
+  prikaziDijalog() {
+    this.router.navigate(['kvar']);
   }
+
 }

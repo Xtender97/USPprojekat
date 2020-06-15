@@ -1,0 +1,21 @@
+<div class="p-grid p-justify-center p-align-center no-margine spacer-in" style="width: 100%">
+    <p-card header="Novi kvar" class="p-col-12 p-lg-6">
+        <div class="p-grid spacer-in">
+            <p-message></p-message>
+            <label class="p-col-4 spacer-out">Opstina</label>
+            <p-dropdown class="p-col-8 no-margin spacer-out" [options]="opstine" [(ngModel)]="opstina"
+                optionLabel="imeOpstine"></p-dropdown>
+            <label class="p-col-4 spacer-out">Lokacija</label>
+            <input class="p-col-8 spacer-out" [(ngModel)]="lokacija" pInputText />
+            <label class="p-col-4 spacer-out">Datum pocetka</label>
+            <p-calendar  class="p-col-8 spacer-out no-margin" [(ngModel)]="datumpocetka">
+            </p-calendar>
+            <label class="p-col-4 spacer-out">Datum kraja</label>
+            <p-calendar class="p-col-8 spacer-out no-margin ui-calendar-timeonly"
+                [(ngModel)]="datumkraja"></p-calendar>
+            <p-button type="button" class="p-col-4 p-offset-8 no-right" [style]="{width:'100%'}" label="Dodaj kvar"
+                (onClick)="dodaj()"></p-button>
+
+        </div>
+    </p-card>
+</div>
