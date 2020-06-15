@@ -9,7 +9,9 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
+import { DropdownModule} from 'primeng/dropdown'
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { RegisterComponent } from './register/register.component';
@@ -32,6 +34,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ButtonModule,
     FormsModule,
     HttpClientModule,
+    TableModule,
+    DropdownModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
