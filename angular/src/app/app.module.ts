@@ -14,7 +14,7 @@ import { DropdownModule} from 'primeng/dropdown'
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { RegisterComponent } from './register/register.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PretplataComponent } from './pretplata/pretplata.component';
