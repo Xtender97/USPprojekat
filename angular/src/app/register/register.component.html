@@ -1,0 +1,36 @@
+<div class="p-grid p-justify-center p-align-center" style="height: 100%; width:100%; ">
+  <p-card header="Registration" class="p-col-4">
+      <div class="spacer-in">
+          <p-messages class="p-col-12" ></p-messages>
+          <form class="p-grid">
+
+
+              <label class="p-col-4 spacer-out" for="firstname">First Name</label>
+              <input [(ngModel)]="this.ime" name="firstName" class="p-col-8 spacer-out" id="firstname"
+                  type="text" size="30" pInputText required #first="ngModel">
+
+              <label class="p-col-4 spacer-out" for="lastname">Last Name</label>
+              <input [(ngModel)]="this.prezime" name="lastName" class="p-col-8 spacer-out" id="lastname" type="text"
+                  size="30" pInputText required #last="ngModel">
+
+              <label class="p-col-4 spacer-out" for="email">Email</label>
+              <input [(ngModel)]="this.email" name="email" class="p-col-8 spacer-out" id="email" type="text" size="30"
+                  pInputText required email #emailInput="ngModel" [ngModelOptions]="{updateOn: 'blur'}">
+
+              <label class="p-col-4 spacer-out" for="password">Password</label>
+              <input [(ngModel)]="this.sifra" name="password" class="p-col-8 spacer-out" id="password"
+                  type="password" size="30" pInputText required #pass="ngModel">
+
+
+
+              <p-button type="button" label="Register" (onClick)="register()" class="p-col-3 p-offset-9 no-right spacer-out" [style]="{width:'100%'}"
+                  [disabled]="first.invalid || last.invalid || emailInput.invalid || pass.invalid" ></p-button>
+
+
+          </form>
+
+      </div>
+
+
+  </p-card>
+</div>

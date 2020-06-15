@@ -1,0 +1,29 @@
+<div class="p-grid p-justify-center p-align-center no-margine" style="height: 100%" >
+  <p-card  header="Sign in" class="p-col-12 p-lg-4 ui-card">
+      <div class="spacer-in">
+          <p-messages class="p-col-12" ></p-messages>
+
+          <form class="p-grid" (submit)="login()">
+              <label class="p-col-4 spacer-out" for="email">Email</label>
+              <input [(ngModel)]="this.email" name="email" class="p-col-8 spacer-out" id="email" type="text" size="30"
+                  pInputText required email #emailInput="ngModel" [ngModelOptions]="{updateOn: 'blur'}">
+              <!--app-message class="p-col-12" [parent]="emailInput"></app-message-->
+
+              <label class="p-col-4 spacer-out" for="password">Password</label>
+              <input [(ngModel)]="this.password" name="password" class="p-col-8 spacer-out" id="password"
+                  type="password" size="30" pInputText required #pass="ngModel">
+
+              <!--app-message class="p-col-12" [parent]="pass"></app-message-->
+
+
+              <p-button type="submit" class="p-col-4 p-offset-8 no-right" [style]="{width:'100%'}" label="Login" [disabled]="emailInput.invalid || pass.invalid"></p-button>
+
+
+
+          </form>
+
+      </div>
+
+
+  </p-card>
+</div>
