@@ -5,6 +5,8 @@
     <div class="navigation right">
       <a *ngIf="!authenticated" (click)="login()">Sign In</a>
       <a *ngIf="authenticated" (click)="logout()">Sign Out</a>
+      <a *ngIf="!authenticated" (click)="register()">Sign Up</a>
+
     </div>
 
   </div>

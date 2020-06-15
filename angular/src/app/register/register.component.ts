@@ -59,5 +59,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.auth.registerUser(this.ime, this.prezime, this.email, this.sifra);
   }
 }

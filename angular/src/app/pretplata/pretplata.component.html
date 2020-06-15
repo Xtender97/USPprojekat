@@ -5,10 +5,11 @@
   <p-card header="Prijava na servis" class="p-col-8 p-lg-4">
     <div class="spacer-in p-grid">
       <label class="p-col-4">Email</label>
-      <input class="p-col-8"/>
+      <input [(ngModel)]="this.email" name="email" class="p-col-8 spacer-out" id="email" type="text" size="30"
+                  pInputText  [ngModelOptions]="{updateOn: 'blur'}">
       <label class="p-col-4">Opstina</label>
       <p-dropdown class="p-col-8" [options]="opstine" [(ngModel)]="opstina" optionLabel="imeOpstine"></p-dropdown>
-      <p-button class="p-col-12" label="Pretplati se"></p-button>
+      <p-button class="p-col-12" label="Pretplati se" (onClick)= "prijava()"></p-button>
 
     </div>
   </p-card>

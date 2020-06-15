@@ -39,7 +39,7 @@ export class AuthService {
 
     console.log('Initializing login information');
     const user: User = this.getAuthData();
-    if (!user.token || !user.id || !user.expirationDate || !user.type) {
+    if (!user.token || !user.id || !user.expirationDate) {
       return false;
     }
     const notExpired = user.expirationDate.getTime() - Date.now() > 0;
@@ -62,7 +62,7 @@ export class AuthService {
     this.msgService.clear();
     const credentials = {
       email: email,
-      password: password
+      sifra: password
     };
     this.http.post<{ message: string, token: string, expiresIn: number, userID: number, type: string }>(this.baseUrl + '/login', credentials).subscribe
       (response => {
@@ -72,11 +72,10 @@ export class AuthService {
         console.log(expirationDate);
         // check if u got the token from the back end
         this.userLoggedIn = true;
-        this.user = new User(response.userID, response.type, expirationDate, response.token);
+        this.user = new User(response.userID, expirationDate, response.token);
         this.userLoggedIn$.next(this.user);
         this.saveAuthData(this.user);
-        var type = this.user.type.replace(" ", "-");
-        this.router.navigate([type]);
+        this.router.navigate(['dashboard']);
       },
         err => {
           console.log(err);
@@ -111,14 +110,14 @@ export class AuthService {
     password: string) {
     const user = {
       ime: firstName,
-      lastName: lastName,
+      prezime: lastName,
       email: email,
       sifra: password
     };
 
     this.http.post(this.baseUrl + '/register', user).subscribe((data: { message: string }) => {
       console.log(data);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/login']);
       this.msgService.add({ key: 'toast', severity: 'success', summary: data.message })
     },
       err => {
@@ -133,7 +132,6 @@ export class AuthService {
     localStorage.setItem("token", user.token);
     localStorage.setItem("expiration", user.expirationDate.toISOString());
     localStorage.setItem("userId", user.id.toString());
-    localStorage.setItem("type", user.type);
   }
 
   private clearAuthData() {
@@ -145,7 +143,6 @@ export class AuthService {
   private getAuthData(): User {
     return new User(
       +localStorage.getItem("userId"),
-      localStorage.getItem("type"),
       new Date(localStorage.getItem("expiration")),
       localStorage.getItem("token"))
   }
