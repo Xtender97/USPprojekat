@@ -5,6 +5,7 @@ const cors = require('cors');
 const sequelize = require('./databaseConnection');
 const path = require('path');
 const associations = require('./models/Associations');
+const user = require('./routes/User.routes')
 
 
 const normalizePort = val => {
@@ -57,7 +58,7 @@ app.set("port", port);
 app.use(cors());
 
 
-// app.use('/api/auth', auth);
+app.use('/api/auth', user);
 // app.use('/api/dispatcher', dispatcher);
 // app.use('/api/fetcher', fetcher);
 

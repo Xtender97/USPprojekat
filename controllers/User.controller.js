@@ -12,7 +12,7 @@ exports.login = function (req, res) {
         })
     }
     const email = req.body.email;
-    const password = req.body.password;
+    const password = req.body.sifra;
     var fetchedUser;
     User.findOne({ where: { email: email } })// after added types table add options to get type of user as a string
         .then(user => {
@@ -21,7 +21,7 @@ exports.login = function (req, res) {
 
             } else {
                 fetchedUser = user;
-                return bcrypt.compare(password, user.password)
+                return bcrypt.compare(password, user.sifra)
                     .then(result => {
                         if (!result) {
                             return res.status(401).json({ message: `Wrong password`, error: null });
@@ -29,16 +29,14 @@ exports.login = function (req, res) {
                         const tokenDuration = 3600 * 12; // 12h
                         const token = jwt.sign({
                             id: fetchedUser.id,
-                            email: fetchedUser.email,
-                            type: fetchedUser.type
-                        }, process.env.JWT_KEY, { expiresIn: tokenDuration }); // token expires in 1h, maybe need to be changed 
+                            email: fetchedUser.email
+                        }, "kljuc_za_enkripciju", { expiresIn: tokenDuration }); // token expires in 1h, maybe need to be changed 
 
                         res.status(200).json({
                             message: "Successfull login!",
                             token: token,
                             userID: fetchedUser.id,
-                            expiresIn: tokenDuration,
-                            type: fetchedUser.type
+                            expiresIn: tokenDuration
                         })
                     }).catch(errorHandler);
             }
